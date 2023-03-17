@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <h1>soy el footer</h1>
+        <h3>©copyright Dana Angellotti 2023</h3>
       </footer>
     </>
   );

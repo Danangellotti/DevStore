@@ -12,10 +12,7 @@ export default function Header() {
       <Link to="/">
         <img src={iconoVolver} alt="" className="volver" />
       </Link>
-      <h1 className="titulo">
-        Dev <br />
-        RockStore
-      </h1>
+      <h1 className="titulo">Dev Store</h1>
     </>
   );
 }
