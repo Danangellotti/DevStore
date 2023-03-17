@@ -1,9 +1,21 @@
 import React from "react";
+import iconoCarrito from "../assets/statics/carrito.png";
+import iconoVolver from "../assets/statics/volver.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div>
-      <h1>Soy el Header </h1>
-    </div>
+    <>
+      <Link to="/carrito">
+        <img src={iconoCarrito} alt="" className="carritou" />
+      </Link>
+      <Link to="/">
+        <img src={iconoVolver} alt="" className="volver" />
+      </Link>
+      <h1 className="titulo">
+        Dev <br />
+        RockStore
+      </h1>
+    </>
   );
 }

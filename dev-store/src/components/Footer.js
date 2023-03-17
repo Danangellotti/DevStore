@@ -2,8 +2,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div>
-      <p>Copyright Dana Angellotti 2023</p>
-    </div>
+    <>
+      <footer>
+        <h1>soy el footer</h1>
+      </footer>
+    </>
   );
 }
