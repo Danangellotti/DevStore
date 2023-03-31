@@ -4,7 +4,11 @@ import ItemCarrito from "../components/ItemCarrito";
 import Contexto from "../context/Contexto";
 
 export default function Carrito() {
-  const { carrito, eliminarCarrito } = useContext(Contexto);
+  const { carrito, eliminarCarrito, db, ref, push } = useContext(Contexto);
+  const refe = ref(db, "compritas/");
+  const guardar = () => {
+    push(refe, carrito);
+  };
   return (
     <>
       <div className="carrito">
@@ -23,6 +27,7 @@ export default function Carrito() {
           <strong>U$D 3400</strong>
         </div>
       </div>
+      <button onClick={guardar}>COMPRAR</button>
     </>
   );
 }

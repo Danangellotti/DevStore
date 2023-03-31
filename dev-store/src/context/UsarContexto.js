@@ -2,7 +2,23 @@ import Contexto from "./Contexto";
 import axios from "axios";
 import { useReducer } from "react";
 import Reducer from "./Reducer";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue, push } from "firebase/database";
+// Initialize Firebase
 export default function UsarContexto(props) {
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIG2i2DcieQEXy-pzicqkmQamUwjKwc2s",
+    authDomain: "dev-store-3a43e.firebaseapp.com",
+    projectId: "dev-store-3a43e",
+    storageBucket: "dev-store-3a43e.appspot.com",
+    messagingSenderId: "247876108096",
+    appId: "1:247876108096:web:c1df46f51088fc6fb7c4a5",
+    measurementId: "G-DPEWLYNNCW",
+  };
+  const appp = initializeApp(firebaseConfig);
+
+  const db = getDatabase();
+  const refe = ref(db, "productos/");
   const { children } = props;
   const estadoInicial = {
     productos: [],
@@ -32,6 +48,10 @@ export default function UsarContexto(props) {
         listameProductos,
         agregarCarrito,
         eliminarCarrito,
+        onValue,
+        ref,
+        db,
+        push,
       }}
     >
       {children}
