@@ -9,6 +9,7 @@ export default function UsarContexto(props) {
   const firebaseConfig = {
     apiKey: "AIzaSyAIG2i2DcieQEXy-pzicqkmQamUwjKwc2s",
     authDomain: "dev-store-3a43e.firebaseapp.com",
+    databaseURL: "https://dev-store-3a43e-default-rtdb.firebaseio.com",
     projectId: "dev-store-3a43e",
     storageBucket: "dev-store-3a43e.appspot.com",
     messagingSenderId: "247876108096",
@@ -16,7 +17,6 @@ export default function UsarContexto(props) {
     measurementId: "G-DPEWLYNNCW",
   };
   const appp = initializeApp(firebaseConfig);
-
   const db = getDatabase();
   const refe = ref(db, "productos/");
   const { children } = props;
